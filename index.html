@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sams Questions</title>
+
+  <script>
+
+    function userColor() {
+      let favColour = document.getElementById('colorInputText').value;
+      // document.write = ("This is your favourite color: " + favColour)
+      document.body.style.backgroundColor = favColour;
+
+      if (favColour == "white") {
+        document.getElementsById('h1Title');
+        setAttribute("style","color","black");
+      }
+    }
+
+
+
+    // ------------FAV ANIMAL ------------
+
+    
+
+    function userAnimal() {
+  
+      let favAnimal = document.getElementById('animalInput').value;
+      
+      if (favAnimal == "tiger") {
+        let img = "<img src='./imgs/tiger.gif' class='tiger' />"
+        console.log(document.getElementById('animalSpan'))
+        document.getElementById('animalSpan').innerHTML = img + "<Tigers are my favourite too!</p>"
+        console.log("tiger")
+
+      } else {
+        alert("Wrong choice!");
+        console.log("wrong");
+        document.write("<p>You picked the wrong answer!</p>")
+        
+      }
+    }
+
+
+
+
+    // ------------ JAZZ ------------
+    function Jazz() {
+      let jazzBinary = prompt("Do you like jazz?","yes");
+      if (jazzBinary == "yes") {
+        document.write("<p>You like jazz!</p>")
+        document.write("<img class='jazz' src='https://media3.giphy.com/media/YlqQXt3PFFFC0/giphy.gif?cid=ecf05e47o9u6n13jazgyr51lvl4mqwzj12v1xdzxk3vjj4h2&rid=giphy.gif&ct=g'>")
+      } else {
+        document.write("<p>Boo! Try out snarky puppy</p>")
+      }
+    }
+
+    function age() {
+      let ageAge = prompt("How old are you?");
+      document.write("You are " + ageAge + " years old.")
+
+    }
+  </script>
+
+  <style>
+    body{
+      text-align: center;
+      background-color: palevioletred;
+    }
+
+    p{
+      font-family: monospace;
+      font-size: large;
+    }
+
+    h1{
+      color: floralwhite;
+    }
+
+    .jazz{
+      width: 200px;
+      height: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1 style="font-family:cursive;" id="h1Title"> Class 1 Lab : Welcome to my great website!!! Answer my questions right now!</h1>
+    <!-- <button>Click me!</button> -->
+  </header>
+  <main>
+    <p>What is your favourite color?</p>
+      <input type="text" id="colorInputText">
+      <input type="button" id="colorButton" value="click to change color" onclick="userColor()">
+
+
+      
+
+    <p>Which of these animals do you like most? tiger|dragon|elephant|goat|human</p>
+      <input type="text" id="animalInput">
+      <input type="button" id="animalButton" value="submit">
+      <!--- <script>userAnimal()</script> -->
+      <span id="animalSpan"></span>
+
+
+
+    <p>Do you like jazz?</p>
+    <script>Jazz()</script>
+
+    <p>How old are you?</p>
+    <script>age()</script>
+
+  </main>
+  <footer></footer>
+  <script>document.getElementById("animalButton").addEventListener("click", userAnimal);</script>
+</body>
+</html>
